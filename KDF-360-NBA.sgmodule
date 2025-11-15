@@ -1,0 +1,19 @@
+#!name=KDF - 360 NBA 视频解析&去广告
+#!desc=适配 360.com NBA 页面，解析视频地址并屏蔽 Bestv 弹窗/开屏广告
+
+[Script]
+# NBA 视频和电视剧接口解析
+KDF_NBA_Video_Parser = type=http-response,pattern=^https:\/\/bp-api\.bestv\.(?:com\.cn|cn)\/cms\/api\/(live\/studio\/id\/v8|c\/player\/common),requires-body=1,max-size=0,timeout=30,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/KDF/video-parser.js
+
+# 360.com HTML / m3u 页面解析
+KDF_360_HTML_Parser = type=http-response,pattern=^https?:\/\/360\.com\/(?:video|nba\.m3u|dianshi\.m3u)$,requires-body=1,max-size=0,timeout=30,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/KDF/video-parser.js
+
+[URL Rewrite]
+# 首页弹窗广告
+^https:\/\/bp-api\.bestv\.cn\/cms\/api\/advertise\/project\/advertise\/popup\/scene$ - reject
+
+# 开屏广告（清除缓存）
+^https:\/\/bp-api\.bestv\.cn\/cms\/api\/free\/open\/advertisingV2$ - reject
+
+[MITM]
+hostname = 360.com, bp-api.bestv.com.cn, bp-api.bestv.cn
