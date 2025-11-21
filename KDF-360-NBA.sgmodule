@@ -1,5 +1,6 @@
 #!name=KDF - 360 NBA 视频解析&去广告
 #!desc=适配 360.com NBA 页面，解析视频地址并屏蔽 Bestv 弹窗/开屏广告
+#!category=BlakeleyxWhiteman
 
 [Script]
 # NBA 视频和电视剧接口解析
