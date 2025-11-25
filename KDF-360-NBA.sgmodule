@@ -17,4 +17,4 @@ KDF_360_HTML_Parser = type=http-response,pattern=^https?:\/\/360\.com\/(?:video|
 ^https:\/\/bp-api\.bestv\.cn\/cms\/api\/free\/open\/advertisingV2$ - reject
 
 [MITM]
-hostname = 360.com, bp-api.bestv.com.cn, bp-api.bestv.cn
+hostname = %APPEND% 360.com, bp-api.bestv.com.cn, bp-api.bestv.cn
