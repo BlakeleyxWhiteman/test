@@ -1,0 +1,24 @@
+#!name=万年历Pro
+#!desc=解锁年度会员
+#!category=BlakeleyxWhiteman
+#!tips=无需内购
+#!moduleUrl=https://t.me/ddgksf2021/7265
+#!howtouse=小火箭、Surge用户直接添加模块，QuantumultX用户添加重写时打开解析器
+
+[Script]
+# 配置接口脚本（里也会处理会员）
+STSQ_Config = type=http-response,pattern=^https?:\/\/wallpaper\.soutushenqi\.com\/v\d\/config,requires-body=true,timeout=60,script-path=https://ddgksf2013.top/scripts/soutushenqi.vip.js
+
+# 会员接口脚本
+STSQ_Account = type=http-response,pattern=^https?:\/\/wallpaper\.soutushenqi\.com\/api\/v\d\/account,requires-body=true,timeout=60,script-path=https://ddgksf2013.top/scripts/soutushenqi.vip.js
+
+[Body Rewrite]
+# 去首页 vip 配置 key（把 stsq_ios_home_vipI 改成空）
+http-request ^https?:\/\/wallpaper\.soutushenqi\.com\/v\d\/config config_key=stsq_ios_home_vipI config_key=
+
+[URL Rewrite]
+# 启动弹窗，直接 200 空响应
+^https?:\/\/wallpaper\.soutushenqi\.com\/v\d\/home\/dialog _ reject-200
+
+[MITM]
+hostname = %APPEND% wallpaper.soutushenqi.com

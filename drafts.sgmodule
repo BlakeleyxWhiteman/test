@@ -1,0 +1,11 @@
+#!name=drafts
+#!desc=解锁年度会员
+#!category=BlakeleyxWhiteman
+#!tips=无需内购
+#!moduleUrl=https://t.me/ddgksf2021/7254
+#!howtouse=小火箭、Surge用户直接添加模块，QuantumultX用户添加重写时打开解析器
+
+[Script]
+Drafts_Verification = type=http-response,pattern=^https?:\/\/backend\.getdrafts\.com\/api\/v\d\/verification,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/BlakeleyxWhiteman/test/refs/heads/main/js/drafts.vip.js
+[MITM]
+hostname = %APPEND% backend.getdrafts.com
