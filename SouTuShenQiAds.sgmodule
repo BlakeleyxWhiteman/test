@@ -7,10 +7,10 @@
 
 [Script]
 # 配置接口脚本（里也会处理会员）
-STSQ_Config = type=http-response,pattern=^https?:\/\/wallpaper\.soutushenqi\.com\/v\d\/config,requires-body=true,timeout=60,script-path=https://ddgksf2013.top/scripts/soutushenqi.vip.js
+STSQ_Config = type=http-response,pattern=^https?:\/\/wallpaper\.soutushenqi\.com\/v\d\/config,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/BlakeleyxWhiteman/test/refs/heads/main/js/soutushenqi.vip.js
 
 # 会员接口脚本
-STSQ_Account = type=http-response,pattern=^https?:\/\/wallpaper\.soutushenqi\.com\/api\/v\d\/account,requires-body=true,timeout=60,script-path=https://ddgksf2013.top/scripts/soutushenqi.vip.js
+STSQ_Account = type=http-response,pattern=^https?:\/\/wallpaper\.soutushenqi\.com\/api\/v\d\/account,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/BlakeleyxWhiteman/test/refs/heads/main/js/soutushenqi.vip.js
 
 [Body Rewrite]
 # 去首页 vip 配置 key（把 stsq_ios_home_vipI 改成空）
